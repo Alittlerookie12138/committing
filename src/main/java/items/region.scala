@@ -14,7 +14,7 @@ object region {
     val df: DataFrame = spark.read.parquet("E:\\s\\白华强\\互联网项目\\output")
     // 创建临时视图
     df.createTempView("log")
-    // 编写sql语句  ,.
+    // 编写sql语句
     val sql = "select provincename,cityname,count(1) as ct from log group by provincename,cityname";
 
     val resDF: DataFrame = spark.sql(sql)
